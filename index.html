@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<title>6.831 Sudokui</title>
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<link rel="stylesheet" href="layout.css">
+<script src="lib/jquery-3.1.1.js"></script>
+<script src="lib/seedrandom.js"></script>
+<script src="algorithm.js"></script>
+<script src="hintmaker.js"></script>
+<script src="board.js"></script>
+<script src="interface.js"></script>
+<!-- Remove this script to disable logging -->
+<script src="logging.js"></script>
+</head>
+<body>
+	<table style="width:100%;min-height:80%;margin-top:10vh">
+		<tr>
+			<td align="center">
+				<center style="display:table-cell;vertical-align:middle;">
+				<div class="puzzlename" id="grade">&nbsp;</div>
+				<table class="timescore"><tr>
+					<td style="text-align:center">
+						<span class="progress">Time</span>
+						<span class="finished">Finished in</span> <span class="timer">0</span>
+					</td>
+				</table>
+				<table>
+					<tr>
+						<td style="text-align:center" id="leftlayout">
+						</td>
+						<td id="centerlayout">
+							<center >
+								<input type="button" value="Clear" id="clearbutton" title="Reset puzzle.">
+								<input type="button" value="&laquo; Prev" id="prevbutton" title="Previous puzzle.">
+								<input type="button" value="Next &raquo;" id="nextbutton" title="Next puzzle.">
+								<div id="bottomtext" style='margin:0;padding:0;text-align:left;'>
+								<p> Left click on a cell to clear it.
+								<p> Select active number with the mouse, wheel, or keyboard.
+								</div>
+							</center>
+						</td>
+						<td id="rightlayout">
+						</td>
+					</tr>
+				</table>
+				<div class="sudoku-popup" id="victory">You Win!</div>
+				<div class="sudoku-popup" id="intro">
+				<p>In this experiment, you will solve mini Sudoku puzzles.
+				<p>Fill in all the digits so that no duplicates
+				appear in any row, column or bold-bordered square.
+				<p>Click on one of the numbers on the left of the board to select it.
+				Clicking on one of the selections in the board will put the selected number there.
+				<p>You can also use the mouse wheel, arrows, or numbers to change the selected numbers.
+				<p>To remove an entry, left-click on the square, or select it using the eraser.
+				<p>Practice on puzzle #1. Then starting with puzzle #2,
+				solve the puzzles as quickly as you can.  Good luck!</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

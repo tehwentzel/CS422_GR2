@@ -1,0 +1,227 @@
+/* Font loading for firefox/Chrome */
+@font-face {
+  font-family: 'Handlee';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Handlee'),
+       url('font/Handlee-Regular.ttf') format('truetype'); }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'),
+  url('font/OpenSans-ExtraBold.ttf') format('truetype'); }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'),
+       url('font/OpenSans-Regular.ttf') format('truetype'); }
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  src: local('FontAwesome'),
+       url('font/FontAwesome-Webfont.ttf') format('truetype'); }
+
+/* Enable vertical centering */
+html { margin:0; height: 100%; }
+
+/* There is no text selection in this UI */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font: 10pt Open Sans;
+  margin: 0;
+  background-color: rgb(0,0,0,.2);
+  height: 80%; }
+
+/* The title of the app */
+h1 { font: 24pt "Open Sans"; font-weight: 800; margin-bottom: 0; }
+
+/* Left and right column spacing */
+td#centerlayout {
+  vertical-align: top;
+  width: auto;
+  margin-left: 0px;
+}
+#leftlayout{
+	vertical-align: top;
+	width: auto;
+}
+/* Buttons underneath the Sudoku board */
+input[type="button"] {
+  font-family: "Open Sans";
+  background: gainsboro;
+  background-color: hsl(240, 40%, 60%);
+  opacity: .9;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,.25);
+  font-size: 24px;
+  padding: 3px 14px;
+  border-radius: 12px;
+  margin: 1px 20px; }
+input[type="button"]:hover {
+  background-color: hsl(240, 60%, 40%);
+  opacity: 1; }
+
+/* The title of the puzzle */
+.puzzlename {
+   text-align:center;
+   font: 28pt "Open Sans";
+   font-weight: 800;
+   padding-bottom: 10px; }
+
+/* Timer display */
+table.timescore {
+  margin-top: -15px;
+  border: 0;
+  border-collapse: collapse;
+  width: 450px; }
+table.timescore td {
+  font: 16pt "Open Sans";
+  font-weight: 800; }
+
+/* Display "Victory!" or "ok so far" hints */
+.finished {
+  display: none; }
+.hinttext {
+  display: none; }
+
+/* Centered message underneath the UI */
+#bottomtext {
+  text-align:center;
+  min-height: 30px;
+  margin: 15px 0 0 0;
+  font: 10pt Open Sans; }
+/* Allow selection of user id */
+#bottomtext nobr {
+  -webkit-user-select: text;
+  user-select: text; }
+
+/* Styling for a menu of numbers */
+table.numberkey {
+  border-collapse: no-collapse;
+  border-spacing: 0;
+  cursor: pointer;
+  margin-bottom: 30px;}
+td.numberkey-cell {
+  width: 99%; height: 99%;
+  text-align: center; vertical-align: middle;
+  line-height: 0;
+  margin-left: 50%;
+  overflow: hidden;
+  border-radius: 8px; }
+td.numberkey-cell.selected {
+  opacity: 1;
+  background: 'grey';
+  border: 2px solid black; }
+div.eraser {
+  height: auto;
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 40px !important;
+  font-family: FontAwesome;
+  color:DeepPink; }
+table.numberkey .sudoku-answer, .eraser {
+  width: 60px; height: 60px;
+  font-size:50px; }
+
+
+/* The main sudoku table */
+table.sudoku {
+  border-collapse: collapse; }
+
+/* A sudoku cell */
+td.sudoku-cell {
+  width: 90px; height: 90px;
+  text-align: center; vertical-align: middle;
+  line-height: 0;
+  border: 1px solid black; }
+.cellFocus {
+	background: gray;
+ }
+.error {
+	background: rgba(255,0,0,.5);
+}
+/* A thin invisible border that becomes colored to show focus */
+div.sudoku-border {
+  width: 99%; height: 99%;
+  text-align: center; vertical-align: middle;
+  border: 1px solid transparent;
+  overflow: hidden; }
+/* The focused state for a sudoku cell. */
+div.sudoku-border.focus {
+  border: 1px solid blue; }
+/* A written answer number */
+div.sudoku-answer {
+  width: 99%; height: 99%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-top: 5px;
+  color: #777;
+  font: 56px Handlee, sans-serif;}
+/* A given hint number */
+div.sudoku-given {
+  width: 99%; height: 99%;
+  text-align: center; 
+  vertical-align: middle;
+  cursor: default;
+  font: 56px 'Open Sans';
+  font-weight: 800; }
+/* The thick borders between blocks */
+td.sudoku-border {
+  background: black; height: 1px; width: 1px; font-size: 0;
+  border: 1px solid black;}
+
+/* For little mini marks, this div into a cell with a table inside. */
+div.sudoku-work {
+  width: 99%; height: 99%;
+  text-align: center;
+  cursor: pointer;
+  padding: 0; margin: 0; border: 0; }
+/* Mini marks table. */
+table.sudoku-work-table {
+  border-collapse: collapse;
+  border: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+/* Mini marks table cell. */
+table.sudoku-work-table td {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  width: 50px; height: 50px;
+  text-align: center;
+  overflow: hidden;
+  vertical-align: middle; }
+/* Mini marks mini digits. */
+table.sudoku-work-table div {
+  color: #111;
+  font: 12px Handlee, sans-serif;
+  width: 100%;
+  text-align: center;
+  margin: 0 0; }
+
+/* Little popup for "ok so far", "mistake", and "You win!" */
+div.sudoku-popup {
+  position: absolute;
+  height: 42px; width: 220px;
+  font: 30px 'Open Sans';
+  font-weight: 800;
+  cursor: default;
+  padding: 2px;
+  vertical-align: middle;
+  border: 3px solid black;
+  background-color: white;
+  display: none; }
+div.sudoku-popup#victory {
+  background-color: yellow; }
+div.sudoku-popup#intro {
+  width: 30%;
+  padding: 10px;
+  height: auto;
+  font-size: 16px; }
